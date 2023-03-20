@@ -14,4 +14,4 @@ Please include additional context.
 
 ## Issue Link
 
-Please link the original issue URL.
+Please link the original issue URL
