@@ -1,94 +1,95 @@
 html.dark {
-    background-color: #0d0950;
+    background-color: black;
     color: #fff;
+    transition: all 0.5s ease-in-out;
 }
 
 .dark .nav-links a {
     color: #fff;
 }
 
+.dark code {
+    filter: invert(1);
 
+}
+
+.dark .goals-container,
+.dark .facts-container,
+.dark .skills-container {
+    filter: invert(1);
+}
+
+
+.dark .nav-header {
+    border-color: white;
+}
+
+.dark .nav-links a:hover {
+    background-color: #fafafa;
+    color: black;
+}
+
+.dark Footer img {
+    filter: invert(1);
+}
+
+
+.dark .title-2 {
+    filter: invert(1);
+}
+
+.dark .header-container {
+    filter: invert(1);
+}
+
+Footer img {
+    transition: all 0.3s ease-in-out;
+}
+
+Footer img:hover {
+    scale: 1.1;
+}
 
 html {
-    background-color: #f1f5f9;
+    background-color: white;
     font-family: sans-serif;
+    font-weight: 500;
 }
 
-body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-}
-
-/* nav styles */
 .hamburger {
-    padding-right: 20px;
-    cursor: pointer;
-}
-
-.hamburger .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: #ff9776;
-}
-
-
-.nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: #ff9776;
     display: none;
-    margin: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
 }
 
-.nav-links a {
+.hamburger span {
+    width: 30px;
+    background-color: black;
+    color: black;
     display: block;
-    text-align: center;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    height: 5px;
+    margin: 5px 0;
+    gap: 5px;
 }
 
-.nav-links a:hover,
-a:focus {
-    background-color: #ff9776;
-}
+@media screen and (max-width: 768px) {
 
-.expanded {
-    display: unset;
-}
-
-@media screen and (min-width: 636px) {
     .nav-links {
-        margin-left: 5em;
-        display: block;
-        position: static;
-        width: auto;
-        background: none;
+        display: none;
     }
 
-    .nav-links a {
-        display: inline-block;
-        padding: 15px 20px;
+    #themeToggle {
+        display: none;
     }
 
     .hamburger {
+        display: block;
+    }
+
+    .greetings {
         display: none;
     }
 

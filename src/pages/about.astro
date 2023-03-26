@@ -1,6 +1,4 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 const pageTitle = 'About Me';
@@ -8,37 +6,61 @@ const pageTitle = 'About Me';
 const identity = {
   firstName: "Harry",
   country: "England",
-  occupation: "Software Engineer student",
+  occupation: "Software Engineering student",
+  age: 24,
   hobbies: ["Coding", "Gaming", "Shopping"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs", "Python"];
-const happy = true;
-const finished = true;
-const goal = 3;
-
+const skills = ["Python", "Java", "HTML", "CSS", "JavaScript", "React", "Astro" ];
 
 ---
 
 <BaseLayout pageTitle="About Page">
+
+
+  
+     <div class="facts-container absolute top-1/3 left-10 font-bold">
+       <p class=" rounded-t-xl bg-black text-white w-fit p-3">Here are a few facts about me:</p>
+       <ul class=" rounded-xl rounded-tl-none bg-black text-white p-5">
+         <li class="">My name is {identity.firstName}.</li>
+         <li>I am <span class="bg-white text-black rounded-lg p-1 ">{identity.age}</span> years old.</li>
+         <li>I live in {identity.country}.</li>
+         <li>I am currently a {identity.occupation}.</li>
+         {identity.hobbies.length >= 2 && 
+           <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+         } 
+         <p>I am a big lover of everything creative. whether thats with music, fashion, <br> art or even design. I like to try and be as creative as possible which transitions <br> into my work to produce different styles of work.</p>
+       </ul>
+    </div>   
+    <div class="skills-container flex flex-col items-center absolute bottom-64 right-36 font-bold">
+      <p class="bg-black text-white w-fit p-4 rounded-xl rounded-b-none">My skills are:</p>
+      <ul class="bg-black rounded-xl flex  gap-6 justify-center items-center p-6 ">
+        {skills.map((skill) => <li class="skill bg-white text-black w-fit rounded-full p-3">{skill}</li>)}
+      </ul>
+    </div>
+    <div class="goals-container flex absolute bottom-32 left-10 font-bold">
+      <p class="bg-black text-white rounded-l-xl w-fit p-4 h-fit">My goals are:</p>
+      <ul class="bg-black flex  rounded-xl rounded-tl-none gap-6 justify-center items-center p-6 w-fit">
+        <li class="goal bg-white text-black w-fit rounded-xl p-3">Learn Next</li>
+        <li class="goal bg-white text-black w-fit rounded-xl p-3">Learn Astro</li>
+        <li class="goal bg-white text-black w-fit rounded-xl p-3">Learn React</li>
+        <li class="goal bg-white text-black w-fit rounded-xl p-3"></li>
+        <li class="goal bg-white text-black w-fit rounded-xl p-3"></li>
+        <li class="goal bg-white text-black w-fit rounded-xl p-3"></li>
         
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-    {identity.hobbies.length >= 2 && 
-      <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-    } 
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-  {happy && <p>I am happy to be learning Astro!</p>}
+      </ul>
+    </div>
+    
+      <code class="z-10 absolute left-1/3 text-black">
+        <p>&lt;div class="about-container"&gt;</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This blog site is to document my coding journey. &lt;br&gt; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;follow along with what I get up to and what I plan to do in the future. &lt;br&gt; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I plan to further my programming knowledge in many ways. &lt;br&gt; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; My end goal is to become a full stack web developer, &lt;br&gt; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-white">but to also b</span>e pro efficient in all aspects of programming. &lt;br&gt; <br> &nbsp;&nbsp;&nbsp;<span class="text-white">&lt;/p&gt; <br>  &lt;/div&gt;</span> </p>
+      </code>
+   
 
-  {finished && <p>I finished this tutorial!</p>}
+      <p class=" text-9xl absolute right-16">&lt;/&gt;</p>
 
-  {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+      <p class=" text-3xl absolute right-11">&lt;/&gt;</p>
+
+
 
 </BaseLayout>

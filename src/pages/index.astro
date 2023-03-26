@@ -3,7 +3,44 @@ import Greeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 ---
-<BaseLayout pageTitle="Home page">
-  <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+<BaseLayout pageTitle="Home page" >
+  <div class="text-9xl font-bold -z-40 w-fit pointer-events-none">
+    <div id="b">B</div>
+    <div id= "l">L</div>
+    <div id="o">O</div>
+    <div id="g">G</div>
+  </div>
+  <!-- <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} /> -->
+  <script>
+    //random directions
+    const randomDirection = Math.floor(Math.random() * 100) === 0 ? "normal" : "reverse";
+    //random colors
+    const colors = ["red", "blue", "green", "yellow", "purple", "pink", "orange"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    //random font sizes
+    const fontSizes = ["text-2xl", "text-3xl", "text-4xl", "text-5xl", "text-6xl", "text-7xl", "text-8xl", "text-9xl"];
+    const randomFontSize = fontSizes[Math.floor(Math.random() * fontSizes.length)];
+    //random font weights
+    // const fontWeights = ["font-thin", "font-extralight", "font-light", "font-normal", "font-medium", "font-semibold", "font-bold", "font-extrabold", "font-black"];
+    // const randomFontWeight = fontWeights[Math.floor(Math.random() * fontWeights.length)];
+
+    const letterB = document.getElementById("b");
+    const letterL = document.getElementById("l");
+    const letterO = document.getElementById("o");
+    const letterG = document.getElementById("g");
+
+    const letters = [letterB, letterL, letterO, letterG];
+
+    letters.forEach((letter) => {
+      letter.style.color = randomColor;
+      letter.style.fontSize = randomFontSize;
+      letter.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg) scale(${Math.random() * 8}) translate(${Math.floor(Math.random() * 20)}px, ${Math.floor(Math.random() * 100)}px) `;
+      letter.style.animation = `spin ${Math.random() * 1}s linear infinite ${randomDirection} ${Math.random() * 1}s `;
+    });
+
+
+
+  </script>
+ 
 </BaseLayout>
+

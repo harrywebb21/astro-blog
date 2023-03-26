@@ -1,17 +1,10 @@
 ---
 import Social from "./Social.astro";
-
 ---
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
 
-<footer>
-  <Social platform="github" username="harrywebb21" />
-  <Social platform="instagram" username="harry_webb98" />
-  <Social platform="twitter" username="harry_webb98" />
+<footer class=" flex gap-1 mt-2  p-4 rounded-lg right-2 bottom-2 absolute">
+  <Social platform="Github.com" username="harrywebb21" icon="github"/>
+  <Social platform="Instagram.com" username="harry_webb98" icon="instagram"/>
+  <Social platform="Twitter.com" username="harry_webb98" icon="twitter"/>
+  <Social platform="codepen.io" username="harrywebb21" icon="codepen"/>
 </footer>
