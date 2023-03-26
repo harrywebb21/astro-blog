@@ -7,7 +7,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 <BaseLayout pageTitle="Blog page">
   <p>This is where I will post about my journey learning Astro.</p>
   <p>Here is a list of all the blogs:</p>
-  <ul>
+  <ul >
     {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
   </ul>
   </BaseLayout>

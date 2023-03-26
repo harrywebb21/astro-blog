@@ -1,8 +1,32 @@
 ---
+import '@fontsource/rubik/600.css';
+const currentPage = Astro.url.pathname;
+
 ---
-<div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <a href="/tags/">Tags</a>
+
+
+
+<div class="nav-links text-2xl gap-3 flex p-4 rounded-full text-black">
+    <a href="/" class={currentPage === '/' ? 'active' : ''}>Home</a>
+    <a href="/about/" class={currentPage === '/about/' ? 'active' : ''}>About</a>
+    <a href="/blog/" class={currentPage === '/blog/' ? 'active' : ''}>Blog</a>
+    <a href="/tags/" class={currentPage === '/tags/' ? 'active' : ''}>Tags</a>
 </div>
+
+<style>
+    .nav-links a {
+        font-style: italic;
+        padding: 0.5rem 1rem;
+
+        font-family: 'Rubik', sans-serif;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .nav-links a:hover {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    .active {
+        text-decoration: line-through;
+    }
+</style>
